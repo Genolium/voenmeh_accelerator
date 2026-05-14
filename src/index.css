@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Open Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-navy: #0A192F;
+  --color-brand-light-navy: #112240;
+  --color-brand-red: #FF3366;
+  --color-brand-bg: #F8FAFC;
+  --color-brand-sec: #E2E8F0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-slate-800 bg-brand-bg;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display font-bold tracking-tight text-brand-navy;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-12 md:py-20 lg:py-28;
+  }
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+  .voenmeh-card {
+    @apply bg-white border border-slate-200 rounded-sm shadow-sm hover:shadow-md hover:border-brand-red transition-all;
+  }
+  .btn-primary {
+    @apply bg-brand-red text-white px-8 py-3 rounded-sm font-mono font-bold text-sm uppercase tracking-wider hover:bg-brand-navy transition-all;
+  }
+  .btn-outline {
+    @apply border border-brand-navy text-brand-navy px-8 py-3 rounded-sm font-mono font-bold text-sm uppercase tracking-wider hover:bg-brand-navy hover:text-white transition-all;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
